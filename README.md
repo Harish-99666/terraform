@@ -1,10 +1,10 @@
 ## App Stack Deployment using Terraform Modules
 
-This will deploy wordpress and promethues applications
+This will deploy wordpress and promethues applications.
 
-- It creates two namespaces named as staging and production 
+- It creates two namespaces named as staging and production.
 
-- Then tt deploys wordpress application in both staging and production along with its CPU requests.
+- Then it deploys wordpress application in both staging and production along with its CPU requests.
 
 - And finally, It deploys prometheus stack using helm in default namespace.
 
@@ -18,17 +18,22 @@ This code is completey flexible and can be modified/re-used as per the requireme
 - Helm 
 - Lens [IDE] - A very useful tool for debug/troubleshooting k8s Git
 
-Stack Deployment Process using Terraform
+## Stack Deployment Process using Terraform
 
 I have used two modules each for wordpress and prometheus
 
- Inside Module:
+appstack
+
+   stack.tf - This is where I have placed required variables/parameters for deployemts. It will call the backend modules during initalization/deployment.
+              terraform will run in this location and it creates .terraform folder to store all its required dependencies.
+
+ Inside Modules:
 
     app.tf - It will have all required application deployment configurations using helm
     providers - It will have the required providers such as k8s, helm etc
     variables - It will have all the variables listed
 
-Application stack [Wordpress + Prometheus] can be deployed using stack.tf file
+Application stack [Wordpress + Prometheus] can be deployed using stack.tf file residing in appstack folder.
 
 
 ## COMMANDS TO USE
@@ -51,7 +56,7 @@ terraform apply [It will apply the changes after confirmation]
 
 
 
-To Check pods status in all namespaces
+##To Check pods status in all namespaces
 
 
 <img width="1039" alt="image" src="https://user-images.githubusercontent.com/28441475/183281949-25cf986c-d31f-43bf-8a8f-64f6e6a027c4.png">
