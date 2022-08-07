@@ -1,0 +1,9 @@
+namespace: production
+resources: 
+    requests:
+      cpu: 350m
+
+labelSelector: namespace=production
+matchLabels:
+    app.kubernetes.io/instance: wordpress-02
+    app.kubernetes.io/name: wordpress

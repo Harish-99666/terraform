@@ -1,0 +1,13 @@
+namespace: staging
+resources: 
+    requests:
+      cpu: 250m
+
+labelSelector: namespace=staging
+matchLabels:
+    app.kubernetes.io/instance: wordpress-01
+    app.kubernetes.io/name: wordpress
+       
+   
+
+
