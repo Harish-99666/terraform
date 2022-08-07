@@ -21,11 +21,12 @@ This code is completey flexible and can be modified/re-used as per the requireme
 Stack Deployment Process using Terraform
 
 I have used two modules each for wordpress and prometheus
-Inside Module:
 
-app.tf - It will have all required application deployment configurations using helm
-providers - It will have the required providers such as k8s, helm etc
-variables - It will have all the variables listed
+ Inside Module:
+
+    app.tf - It will have all required application deployment configurations using helm
+    providers - It will have the required providers such as k8s, helm etc
+    variables - It will have all the variables listed
 
 Application stack [Wordpress + Prometheus] can be deployed using stack.tf file
 
